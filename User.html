@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>用户账号注册</title>
+		<style type="text/css">
+			body {
+				/*background-color: #A1E6FF;*/
+			}
+			
+			#fie {
+				width: 400px;
+				margin: 80px 50px 0 300px;
+			}
+			
+			h3 {
+				margin-left: 370px;
+				margin-top: 30px;
+				font: f0f0f0;
+			}
+			
+			.xc {
+				position: fixed;
+				top: 170px;
+				left: 53%;
+				width: 303px;
+				height: 100px;
+				text-align: center;
+				height: 100px;
+				font-size: 20px;
+				color: tomato;
+				background: url(../img/1.jpg);
+				background-position: 393px 122px;
+			}
+			
+			#bx {
+				margin-top: 10px;
+			}
+			
+			#but {
+				margin-top: 10px;
+			}
+			
+			.m {
+				position: fixed;
+				top: 2%;
+				left: 728px;
+				width: 330px;
+				height: 330px;
+				text-align: center;
+				font-size: 20px;
+			}
+			
+			.mi1 a {
+				text-decoration: none;
+			}
+			
+			.mi2 img {
+				width: 300px;
+				height: 250px;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<h3>尊敬的用户，请认真填写注册信息</h3>
+		<form action="" method="post">
+			<fieldset id="fie">
+				<legend>注册</legend>
+
+				用户名： <input type="text" id="uname" placeholder="例：坏小孩" onkeyup="aa()" /> <span id="spa" class="dd"></span><br /> <br />密&nbsp;码：
+				<input type="password" id="pass" placeholder="5~16位密码哦" onkeyup="bb()" /> <span id="spa2" class="dd"></span><br /><br /> 手机号：
+				<input type="text" id="phone" placeholder="例：18298882914" onkeyup="dd()" /> <span id="spa3" class="dd"></span><br /><br /> 邮&nbsp;箱：
+				<input type="text" id="mi" placeholder="例：191389@qq.com" onkeyup="cc()" /> <span id="spa4" class="dd"></span> <br /><br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="reset" id="res" value="重置" />&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="button" id="sub" name="" value="提交" onclick="xx()">
+
+			</fieldset>
+
+		</form>
+
+	</body>
+
+</html>
+<script type="text/javascript">
+	function aa() {
+		var uname = document.getElementById("uname").value
+		var pattern = /^([\u4e00-\u9fa5]{3,5})$/gi;
+		var max = pattern.test(uname)
+		if(max == true) {
+			spa.innerHTML = "输入正确"
+			return true
+		} else {
+			spa.innerHTML = "格式错误，请重新输入"
+			return false
+		}
+	}
+
+	function bb() {
+		var pass = document.getElementById("pass").value
+		var pattern = /^([\w\-\.\@]{6,15})$/gi;
+		var max = pattern.test(pass)
+		if(max == true) {
+			spa2.innerHTML = "输入正确"
+			return true
+		} else {
+			spa2.innerHTML = "格式错误，请重新输入"
+			return false
+		}
+	}
+
+	function cc() {
+		var mi = document.getElementById("mi").value
+		var pattern = /^([\w\-\.]+)(\@)([\w]+)(\.[a-z]{2,5})+$/gi;
+		var max = pattern.test(mi)
+		if(max == true) {
+			spa4.innerHTML = "输入正确"
+			return true
+		} else {
+			spa4.innerHTML = "格式错误，请重新输入"
+			return false
+		}
+	}
+
+	function dd() {
+		var phone = document.getElementById("phone").value
+		var pattern = /^(13|15|18|17)([0-9]{9})$/gi;
+		var max = pattern.test(phone)
+		if(max == true) {
+			spa3.innerHTML = "输入正确"
+			return true
+		} else {
+			spa3.innerHTML = "格式错误，请重新输入"
+			return false
+		}
+	}
+
+	function xx() {
+		if(aa() == true && bb() == true && cc() == true && dd() == true) {
+			alert("提交成功")
+			
+		} else {
+			alert("请核对信息是否正确")
+		}
+	}
+	//	===============================
+	//=============================================
+</script>
