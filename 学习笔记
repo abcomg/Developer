@@ -1,1 +1,456 @@
 这里面什么也没有，去别处看看吧
+<! DOCTYPE html>
+HTML就这样，看看就行，这么简单，没必要做太多功课，这个都这么学，那其他的你是不是得用大半辈子来学！！！
+
+基本格式
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+</body>
+</html>
+基础
+
+<!DOCTYPE> 定义文档类型
+<html> 定义一个 HTML 文档
+<title> 为文档定义一个标题
+<body> 定义文档的主体
+<h1> to <h6> 定义 HTML 标题
+<p> 定义一个段落
+<br> 定义简单的折行
+<hr> 定义水平线
+<!--...--> 定义一个注释
+<b><strong>文本加粗
+<big>文本放大
+<em><i>文本斜体
+<small>文本缩小
+<sub>下标
+<sup>上标
+&nbsp;空格
+<pre>对空行和空格 进行控制，不解析空行空格
+<code>计算机输出</code>
+<kbd>键盘输入</kbd>
+<tt>打字机文本</tt>
+<samp>计算机代码样本</samp>
+<var>计算机变量</var>
+
+<a href="mailto:abcomgoo@gmail.com">Jon Doe</a>邮件
+<bdo dir="rtl/ltr">该段落文字从右到左显示</bdo>
+<del>blue</del>删除线
+<ins>red</ins>新插入
+<q>等同于“”
+</blockquote>长引用
+<abbr title="World Health Organization">WHO</abbr>定义缩写
+
+<a id="tips">有用的提示部分</a>
+<a href="#tips">访问有用的提示部分</a>
+
+<base href="http://www.runoob.com/images/" target="_blank">定义页面中所有链接默认的链接目标地址
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">定义关键词
+<meta name="description" content="免费 Web & 编程 教程">为网页定义描述内容
+<meta name="author" content="Runoob"> 定义网页作者
+<meta http-equiv="refresh" content="30">每30秒中刷新当前页面
+
+显示结果
+
+描述
+
+实体名称
+
+实体编号
+
+
+空格
+
+&nbsp;
+
+&#160;
+
+<
+
+小于号
+
+&lt;
+
+&#60;
+
+>
+
+大于号
+
+&gt;
+
+&#62;
+
+&
+
+和号
+
+&amp;
+
+&#38;
+
+"
+
+引号
+
+&quot;
+
+&#34;
+
+'
+
+撇号
+
+&apos; (IE不支持)
+
+&#39;
+
+￠
+
+分
+
+&cent;
+
+&#162;
+
+£
+
+镑
+
+&pound;
+
+&#163;
+
+¥
+
+人民币/日元
+
+&yen;
+
+&#165;
+
+€
+
+欧元
+
+&euro;
+
+&#8364;
+
+§
+
+小节
+
+&sect;
+
+&#167;
+
+©
+
+版权
+
+&copy;
+
+&#169;
+
+®
+
+注册商标
+
+&reg;
+
+&#174;
+
+™
+
+商标
+
+&trade;
+
+&#8482;
+
+×
+
+乘号
+
+&times;
+
+&#215;
+
+÷
+
+除号
+
+&divide;
+
+&#247;
+
+样式
+
+opacity/透明度
+font-family/字体样式
+position:absolute/绝对定位/relative:相对定位/static:默认、静止/fixed:固定定位
+     除static外，其他属性都要与Top，Left，Right，Bottom结合使用
+padding/内边距
+margin/外边距
+border/边框:10px solid #EE872A
+letter-spacing/文本间距
+background-color/背景色
+font-size/字体大小
+text-align:center;/居中对齐
+text-decoration:none;/链接下划线去掉
+target="_blank"/新窗口
+<a id="C4">锚点<a href="#C4">
+alt/图片提示文本
+float:left/浮动
+<iframe src="http://www.runoob.com">/内联框架/// frameborder="0"移除边框
+图片的多链接
+
+<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+
+default
+
+规定全部区域
+
+rect
+
+定义矩形区域
+
+circle
+
+定义圆形
+
+poly
+
+定义多边形区域
+
+表单
+
+<form action="" method="post">
+     <input type="submit" value=""/>
+</form>
+
+<input type="text" name="name">文本域
+<input type="password" name="password">密码域
+
+<input type="checkbox" name="vehicle" value="Bike">/复选框
+<input type="checkbox" name="vehicle" value="Car">同上
+
+<input type="radio" name="sex" value="male">/单选框
+<input type="radio" name="sex" value="female">同上
+
+<select name="cars">
+     <option value="volvo">Volvo</option>
+     <option value="saab">Saab</option>
+     <option value="fiat">Fiat</option>
+     <option value="audi" selected>Audi</option> 预选( selected )
+</select>
+
+<textarea rows="10" cols="30">文本框，10行30列
+
+<input type="button" value="Hello world!">自定义按钮
+
+<fieldset> 包含标题的框架
+<legend>Personal information:</legend>
+     Name: <input type="text" size="30"><br>
+     E-mail: <input type="text" size="30"><br>
+     Date of birth: <input type="text" size="10">
+</fieldset>
+
+<input type="submit" value="提交">指定一个预先定义的输入控件选项列表
+
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+列表
+
+<ul type="A">
+     <li></li>
+</ul>
+
+<ol>
+     <li></li>
+</ol>
+
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+表格
+
+<table border="1">
+<tr>
+  <td>100</td>
+</tr>
+</table>
+
+border="0"/无边框
+
+<tr> 表头
+  <th>Name</th>
+  <th>Telephone</th>
+  <th>Telephone</th>
+</tr>
+
+<caption>Monthly savings</caption>标题
+
+<th colspan="2">Telephone</th>横跨2列
+<th rowspan="2">Telephone:</th>
+
+<table border="1" cellpadding="15">单元格边距
+<table border="1" cellspacing="10"> 单元格间距
+
+速查表
+HTML 速查列表
+
+HTML 速查列表. 你可以打印它，以备日常使用。
+
+HTML 基本文档
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>文档标题</title>
+</head>
+<body>
+可见文本...
+</body>
+</html>
+
+基本标签（Basic Tags）
+
+<h1>最大的标题</h1>
+<h2> . . . </h2>
+<h3> . . . </h3>
+<h4> . . . </h4>
+<h5> . . . </h5>
+<h6>最小的标题</h6>
+
+<p>这是一个段落。</p>
+<br> （换行）
+<hr> （水平线）
+<!-- 这是注释 -->
+
+文本格式化（Formatting）
+
+<b>粗体文本</b>
+<code>计算机代码</code>
+<em>强调文本</em>
+<i>斜体文本</i>
+<kbd>键盘输入</kbd>
+<pre>预格式化文本</pre>
+<small>更小的文本</small>
+<strong>重要的文本</strong>
+
+<abbr> （缩写）
+<address> （联系信息）
+<bdo> （文字方向）
+<blockquote> （从另一个源引用的部分）
+<cite> （工作的名称）
+<del> （删除的文本）
+<ins> （插入的文本）
+<sub> （下标文本）
+<sup> （上标文本）
+
+链接（Links）
+
+普通的链接：<a href="http://www.example.com/">链接文本</a>
+图像链接： <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
+邮件链接： <a href="mailto:webmaster@example.com">发送e-mail</a>
+书签：
+<a id="tips">提示部分</a>
+<a href="#tips">跳到提示部分</a>
+
+图片（Images）
+
+<img src="URL" alt="替换文本" height="42" width="42">
+
+样式/区块（Styles/Sections）
+
+<style type="text/css">
+h1 {color:red;}
+p {color:blue;}
+</style>
+<div>文档中的块级元素</div>
+<span>文档中的内联元素</span>
+
+无序列表
+
+<ul>
+    <li>项目</li>
+    <li>项目</li>
+</ul>
+
+有序列表
+
+<ol>
+    <li>第一项</li>
+    <li>第二项</li>
+</ol>
+
+定义列表
+
+<dl>
+  <dt>项目 1</dt>
+    <dd>描述项目 1</dd>
+  <dt>项目 2</dt>
+    <dd>描述项目 2</dd>
+</dl>
+
+表格（Tables）
+
+<table border="1">
+  <tr>
+    <th>表格标题</th>
+    <th>表格标题</th>
+  </tr>
+  <tr>
+    <td>表格数据</td>
+    <td>表格数据</td>
+  </tr>
+</table>
+
+框架（Iframe）
+
+<iframe src="demo_iframe.htm"></iframe>
+
+表单（Forms）
+
+<form action="demo_form.php" method="post/get">
+<input type="text" name="email" size="40" maxlength="50">
+<input type="password">
+<input type="checkbox" checked="checked">
+<input type="radio" checked="checked">
+<input type="submit" value="Send">
+<input type="reset">
+<input type="hidden">
+<select>
+<option>苹果</option>
+<option selected="selected">香蕉</option>
+<option>樱桃</option>
+</select>
+<textarea name="comment" rows="60" cols="20"></textarea>
+
+</form>
+
+实体（Entities）
+
+&lt; 等同于 <
+&gt; 等同于 >
+&#169; 等同于 ©
