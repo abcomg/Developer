@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>手工版图片轮播</title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<style type="text/css">
+			#obj {
+				width: 400px;
+				height: 300px;
+				position: relative;
+				margin: 50px auto;
+				overflow: hidden;
+				border: 1px solid #999999;
+			}
+			
+			#obj img {
+				width: 400px;
+				height: 300px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 2;
+			}
+			
+			#obj img+img {
+				z-index: 1;
+				opacity: 0;
+			}
+			
+			#btns {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				right: 5px;
+				bottom: 10px;
+				z-index: 5;
+			}
+			
+			#btns li {
+				float: left;
+				padding: 3px 10px;
+				margin-left: 5px;
+				cursor: pointer;
+				background-color: rgba(255, 255, 255, 0.4);
+			}
+			
+			#btns li.selected {
+				background-color: #000000;
+				color: white;
+				cursor: default;
+			}
+			
+			#obj .btn {
+				position: absolute;
+				top: 120px;
+				z-index: 5;
+				font-size: 60px;
+				color: white;
+				font-weight: bold;
+				cursor: pointer;
+				display: none;
+			}
+			
+			#obj:hover .btn {
+				display: block;
+				opacity: 0.3;
+			}
+			
+			#obj:hover .btn:hover {
+				opacity: 1;
+			}
+			
+			#btnleft {
+				left: 5px;
+			}
+			
+			#btnright {
+				right: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="obj">
+			<div id="btnleft" class="btn">&lt;</div>
+			<div id="btnright" class="btn">&gt;</div>
+			<ul id="btns"></ul>
+			<img src="img/20.jpg" />
+			<img src="img/85.jpg" />
+			<img src="img/80.jpg" />
+			<img src="img/1057705.jpg" />
+			<img src="img/1087978.jpg" />
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(function() {
+		var arrimg = $('#obj>img')
+		var index = 0,
+			delay = 1000
+
+		$('#btns').on('click', 'li', function() {
+			clearInterval($time)
+			index = $(this).index()
+			arrimg.css({
+				opacity: 0,
+				zIndex: 1
+			})
+			arrimg.eq(index).css('opacity', '1').siblings('img').css({
+				opacity: 0,
+				zIndex: 1
+			})
+			$(this).addClass('selected').siblings().removeClass('selected')
+			$time = setInterval(aa, 3000)
+
+		})
+		$time = setInterval(aa, 3000)
+
+		function aa() {
+			var oldimg = arrimg.eq(index)
+			if (++index > arrimg.length - 1) {
+				index = 0
+			}
+			oldimg.css({
+				opacity: 1,
+				zIndex: 2
+			}).stop(true).animate({
+				opacity: 0,
+				zIndex: 1
+			}, delay, function() {
+				oldimg.css({
+					zIndex: 1,
+					opacity: 0
+				})
+			})
+
+			$('#btns>li').eq(index).addClass('selected').siblings().removeClass('selected')
+
+			var newimg = arrimg.eq(index)
+			newimg.css({
+				opacity: 0,
+				zIndex: 1
+			}).stop(true).animate({
+				opacity: 1
+			}, delay, function() {
+				newimg.css({
+					opacity: 1,
+					zIndex: 2
+				})
+			})
+		}
+
+		arrimg.each(function(index) {
+			$('<li>' + (index + 1) + '</li>').appendTo('#btns')
+
+		})
+
+		$('#btns>li:first').addClass('selected')
+
+		$('#btnleft').click(function() {
+			if (--index < 0) {
+				index = arrimg.length - 1
+			}
+			$('#btns>li').eq(index).click()
+		})
+		$('#btnright').click(function() {
+			if (++index > arrimg.length - 1) {
+				index = 0
+			}
+			$('#btns>li').eq(index).click()
+		})
+
+	})
+</script>
